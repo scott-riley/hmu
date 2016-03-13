@@ -5,5 +5,12 @@
 
 :global body {
   font-size: --font-size-base;
-  line-height: 1.25rem;
+  line-height: 1.25;
+  font-family: "Roboto", sans-serif;
+}
+
+:global h1,
+:global h2 {
+  font-weight: bold;
+  font-family: "PT Serif", serif;
 }

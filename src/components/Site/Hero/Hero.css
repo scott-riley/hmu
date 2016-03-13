@@ -1,0 +1,22 @@
+.root {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 3rem 0 7rem;
+  text-align: center;
+}
+
+.heading {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: roboto;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.copy {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.75;
+  padding-bottom: 4rem;
+}

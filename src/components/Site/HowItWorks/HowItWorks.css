@@ -1,0 +1,23 @@
+.root {
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.subhead {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.smallWrap {
+  max-width: 1000px;
+  margin: auto;
+  lost-utility: clearfix;
+}
+
+.smallWrap p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  lost-column: 1/3;
+}

@@ -12,6 +12,7 @@ import Homepage from 'components/Site/Homepage/Homepage';
 // Application
 import AppContainer from "./AppContainer";
 import MainScreen from 'components/App/MainScreen/MainScreen';
+import LogIn from 'components/App/LogIn/LogIn'; 
 
 module.exports = (
 	<Router>
@@ -23,6 +24,7 @@ module.exports = (
 		{/*Application*/}
 		<Route path="/app" component={AppContainer}>
 			<IndexRoute component={MainScreen} />
+			<Route path="login" component={LogIn} />
 		</Route>
 	</Router>
 );

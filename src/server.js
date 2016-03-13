@@ -47,6 +47,8 @@ try {
                 <title>Strtkt – we so startup m8s</title>
                 <link rel="shortcut icon" href="/favicon.ico">
                 ${styleTag}
+                <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300,900,400italic' rel='stylesheet' type='text/css'>
+                <link href='https://fonts.googleapis.com/css?family=PT+Serif:700' rel='stylesheet' type='text/css'>
               </head>
               <body>
                 <div id="react-root">${reactString}</div>

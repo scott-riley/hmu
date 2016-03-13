@@ -1,31 +1,32 @@
 .root {
-  background: white;
+  background: var(--color-secondary);
   color: #444;
   lost-utility: clearfix;
   padding: 1rem 0;
-  border-bottom: 2px solid var(--color-secondary);
 }
 
-.links {
-  lost-column: 4/8;
-  padding: 1rem;
-}
-
-.link {
-  display: inline-block;
-  padding-right: 1rem;
+.wrap {
+  border-bottom: 1px solid rgba(255,255,255,.5);
 }
 
 .logo {
-  lost-column: 1/8;
+  lost-column: 4/8;
   text-align: left;
   font-size: var(--font-size-zeta);
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  color: white;
+  font-family: "Roboto";
 }
 
 .cta {
-  lost-column: 3/8;
-  text-align: right;
-  padding: 1rem 0;
+  float: right;
+  padding-top: 1.3rem;
+}
+
+.link {
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }

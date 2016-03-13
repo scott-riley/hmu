@@ -1,19 +1,23 @@
-.root {
-  border-radius: 6px;
+  .root {
+  border-radius: 80px;
   border: 1px solid;
   color: var(--color-secondary);
   font-weight: bold;
   text-transform: uppercase;
-  font-size: var(--font-size-iota);
-  padding: 1rem;
+  padding: 1.4em 1.8em;
   text-decoration: none;
-  background: transparent;
+  background: white;
 }
 
 .root:hover {
-  opacity: .4;
+  opacity: .8;
 }
 
 .primary {
   color: var(--color-primary);
+}
+
+.blank {
+  border: none;
+  background: transparent;
 }

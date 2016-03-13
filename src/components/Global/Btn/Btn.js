@@ -3,10 +3,11 @@ import s from "./Btn.css";
 
 export default class Btn extends Component {
   render() {
-    const {href, onClick, children, className} = this.props;
+    const {href, onClick, children, className, modifier} = this.props;
     const classNames = [
       s.root,
-      className
+      className,
+      s[modifier],
     ].join(' ');
     return (
       href ?
@@ -24,4 +25,5 @@ Btn.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  modifier: PropTypes.string,
 };

@@ -1,0 +1,28 @@
+.root {
+  max-width: 450px;
+  margin: auto;
+  padding: 4rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 4px;
+  margin-top: 5rem;
+}
+
+.formGroup {
+  padding-bottom: 4rem;
+}
+
+.formGroup label {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+  color: var(--color-secondary);
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 1rem .5rem;
+  border: none;
+  border-bottom: 1px solid var(--color-secondary);
+}

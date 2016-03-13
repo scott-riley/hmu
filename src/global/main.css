@@ -3,10 +3,10 @@
 @import '../../node_modules/normalize.css/normalize.css';
 
 :root {
-	--gutter: 35px;
+	--gutter: 65px;
 }
 
-@lost gutter 35px;
+@lost gutter 65px;
 
 :global * {
   box-sizing: border-box;
