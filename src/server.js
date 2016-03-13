@@ -1,12 +1,12 @@
 import babelPolyfill from "babel-polyfill";
 import koa from "koa";
+import cors from "koa-cors";
 import koaProxy from "koa-proxy";
 import koaStatic from "koa-static";
 import compressor from "koa-compressor";
 import React from "react";
 import ReactDOM from "react-dom/server";
 import * as ReactRouter from "react-router";
-import * as history from "history";
 import Transmit from "react-transmit";
 
 import routesContainer from "containers/routes";
@@ -18,13 +18,13 @@ try {
   let   routes   = routesContainer;
 
 	app.use(compressor());
-
+  app.use(cors());
   app.use(koaStatic("static"));
 
   app.use(function *(next) {
     yield ((callback) => {
       const webserver = __PRODUCTION__ ? "" : `//${this.hostname}:8080`;
-      const location  = history.createLocation(this.path);
+      const location  = this.path;
       const styleTag  = __PRODUCTION__ ? `<link rel="stylesheet" type="text/css" href="${webserver}/dist/app.css" />` : "";
 
       ReactRouter.match({routes, location}, (error, redirectLocation, renderProps) => {
@@ -38,7 +38,7 @@ try {
           return;
         }
 
-        Transmit.renderToString(ReactRouter.RoutingContext, renderProps).then(({reactString, reactData}) => {
+        Transmit.renderToString(ReactRouter.RouterContext, renderProps).then(({reactString, reactData}) => {
           let template = (
             `<!doctype html>
             <html lang="en-us">

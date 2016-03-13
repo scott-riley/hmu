@@ -4,7 +4,6 @@ import Btn from 'components/Global/Btn/Btn';
 import Wrapper from 'components/Global/Wrapper/Wrapper';
 
 import s from './Nav.css'
-import m from 'global/modifiers.css'
 
 export default class Nav extends Component {
   render() {

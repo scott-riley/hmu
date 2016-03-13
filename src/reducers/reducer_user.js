@@ -8,7 +8,6 @@ export default function(state = INITIAL_STATE.user, action) {
       if(data.meta.error) {
         return {status: 'Oops! Your email or password seem to be wrong'}
       }
-      console.log(data.data[0]);
       localStorage.setItem("token", data.data[0].access_token);
     default:
       return state;

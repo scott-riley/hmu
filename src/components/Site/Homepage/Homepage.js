@@ -7,7 +7,6 @@ import Hero from 'components/Site/Hero/Hero';
 import HowItWorks from 'components/Site/HowItWorks/HowItWorks';
 
 import styles from './Homepage.css';
-import m from 'global/modifiers';
 
 export default class Homepage extends Component {
   render() {
