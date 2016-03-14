@@ -16,21 +16,28 @@ export default class MessageItem extends Component {
 
     const rawDate = message.created_at;
     const dateObject = Date.parse(rawDate);
-    const dateString = moment().startOf('day').fromNow();
+    const dateString = moment(rawDate).fromNow();
 
     return (
       <div className={classNames.join(' ')} onClick={onClick}>
         <div className={s.col}>
-          <div className={s.date}>
-            {dateString}
-          </div>
-          <span className={s.data}>
+          { message.fields.subject ?
+              <div className={s.subject}>
+                {message.fields.subject}
+              </div>
+            :
+              null
+          }
+          <span className={s.from}>
             { message.fields.name ?
                 message.fields.name
               :
                 message.email
             }
           </span>
+          <div className={s.date}>
+            {dateString}
+          </div>
         </div>
       </div>
     );

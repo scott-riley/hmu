@@ -14,17 +14,21 @@
   padding: 2rem;
   color: #555;
   lost-utility: clearfix;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.5;
 }
 
 .date {
-  margin-left: 3rem;
   color: #777;
   font-style: italic;
   font-weight: 100;
+  margin-left: 15vw;
+  text-transform: capitalize;
 }
 
 .email {
-  margin-top: .5rem;
+  margin-top: .14rem;
   font-weight: 700;
 }
 
@@ -42,5 +46,25 @@
 }
 
 .thinData {
-  lost-column: 1/4;
+  lost-column: 1/2;
+}
+
+.longData {
+  lost-utility: clearfix;
+  clear: both;
+  width: 100%;
+}
+
+.subject {
+  display: inline-block;
+  font-size: 2rem;
+  margin-left: 15vw;
+  vertical-align: middle;
+  font-weight: 100;
+  color: var(--color-secondary);
+}
+
+.meta {
+  display: inline-block;
+  vertical-align: middle;
 }

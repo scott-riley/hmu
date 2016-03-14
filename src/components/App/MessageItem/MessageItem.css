@@ -1,7 +1,7 @@
 .root {
   display: block;
   border-top: 1px solid #eaeaea;
-  padding: 1.4rem 2rem 2rem;
+  padding: 2rem 2rem 1.6rem;
   background: white;
   cursor: pointer;
 }
@@ -14,12 +14,13 @@
   border-left: 5px solid var(--color-secondary);
 }
 
-.col h3 {
-  font-weight: 900;
-  color: rgb(40,40,40);
+.subject {
+  font-weight: bold;
+  font-size: 1.1rem;
   margin-bottom: .4rem;
-  font-size: .8rem;
-  text-transform: uppercase;
+}
+.from {
+  font-weight: 100;
 }
 
 .date {
@@ -27,4 +28,5 @@
   font-weight: 100;
   margin-bottom: .4rem;
   margin-top: .6rem;
+  text-transform: capitalize;
 }
