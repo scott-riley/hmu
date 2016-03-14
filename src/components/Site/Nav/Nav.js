@@ -10,12 +10,12 @@ export default class Nav extends Component {
     return (
       <nav className={s.root}>
         <Wrapper>
-          <h1 className={s.logo}>👋 HMU</h1>
-          <div className={s.cta}>
-            <a href="/login" className={s.link}>
-              Log in
-            </a>
+          <div className={s.logo}>
+            HMU.<span className={s.emoji}>🕶</span>
           </div>
+          <a href="/login" className={s.link}>
+            Log in
+          </a>
         </Wrapper>
       </nav>
     )

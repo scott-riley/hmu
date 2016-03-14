@@ -51,7 +51,6 @@ class MessageList extends Component {
 
   render() {
     const {messages, activeMessage} = this.props;
-    console.log("RENDER ACTIVE MESSAGE:", activeMessage);
     return (
       <div className={s.root}>
         <div className={s.sidebar}>

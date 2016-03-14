@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import s from './Hero.css';
+import {Link} from 'react-router';
 
 import Wrapper from 'components/Global/Wrapper/Wrapper';
 import Btn from 'components/Global/Btn/Btn';
@@ -11,14 +12,15 @@ export default class Hero extends Component {
       <div className={s.root}>
         <Wrapper>
           <h1 className={[s.heading].join(' ')}>
-            Hit me up
+            Hit me up, m8
           </h1>
           <p className={[s.copy].join(' ')}>
-            Building contact forms can suck. HMU aims to make this less sucky. Sign up for free and get a data-agnostic, super simple endpoint to start receiving messages online.
+            Everyone hates mailto: links. No one likes monolithic CRMs except marketing weirdos. HMU is a data-agnostic API and an IK-Blue-dosed dashboard that you can point forms at, to quickly start receiving and managing your enquiries.
           </p>
-          <Btn href="/app">
-            Sign up for free
-          </Btn>
+          <p className={s.linkContainer}>
+            <Link to="/app/signup" className={s.link}>Get started for free</Link>
+          </p>
+          <img src="images/main-screen.png" className={s.image} />
         </Wrapper>
       </div>
     );

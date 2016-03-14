@@ -5,7 +5,6 @@ export default function(state = INITIAL_STATE.user, action) {
   switch(action.type) {
     case LOG_IN_USER:
       const data = action.payload.data;
-      console.log(data);
       if(data.meta.error) {
         return {status: 'Oops! Your email or password seem to be wrong'}
       }

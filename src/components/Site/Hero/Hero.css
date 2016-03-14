@@ -1,22 +1,75 @@
 .root {
-  background-color: var(--color-secondary);
-  color: white;
-  padding: 3rem 0 7rem;
+  background-color: white;
+  color: #555;
+  padding: 5rem 0 5rem;
   text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+@media (min-width: 900px) {
+  .root {
+    padding-bottom: 0;
+  }
 }
 
 .heading {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-family: roboto;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 3px;
+  font-family: "Gentium Book Basic", serif;
+  font-weight: 700;
+  font-size: 3.7rem;
+  font-style: italic;
+  letter-spacing: -1px;
+  color: var(--color-secondary);
 }
 
 .copy {
   max-width: 600px;
   margin: auto;
+  padding-top: .5rem;
+  font-size: 1.3rem;
   line-height: 1.75;
-  padding-bottom: 4rem;
+  padding-bottom: 1.4rem;
+}
+
+@media (min-width: 900px) {
+  .heading {
+    font-size: 5.7rem;
+  }
+  .copy {
+    font-size: 1rem;
+  }
+}
+
+.image {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .image {
+    display: inline;
+  }
+}
+
+.image {
+  width: 100%;
+  max-width: 890px;
+}
+
+.linkContainer {
+  padding-bottom: 1.1rem;
+}
+
+.link {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--color-secondary);
+  margin-bottom: 1.4rem;
+  border-bottom: 3px solid #cacaca;
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom-color: var(--color-secondary);
 }

@@ -3,3 +3,16 @@
 main {
   min-height: 90vh;
 }
+
+.root {
+  width: 100%;
+  min-height: 100vh;
+  border: 10px solid var(--color-secondary);
+}
+
+@media(min-width: 900px) {
+  .root {
+    border: 30px solid var(--color-secondary);
+    border-bottom: none;
+  }
+}

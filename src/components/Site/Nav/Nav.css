@@ -1,32 +1,43 @@
 .root {
-  background: var(--color-secondary);
-  color: #444;
-  lost-utility: clearfix;
-  padding: 1rem 0;
-}
-
-.wrap {
-  border-bottom: 1px solid rgba(255,255,255,.5);
+  background: white;
+  padding: 2rem;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
 }
 
 .logo {
-  lost-column: 4/8;
-  text-align: left;
-  font-size: var(--font-size-zeta);
-  color: white;
-  font-family: "Roboto";
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  font-weight: 900;
+  letter-spacing: .3rem;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
 }
 
+.emoji {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1rem;
+  vertical-align: top;
+}
+
+
 .cta {
-  float: right;
+  display: inline-block;
   padding-top: 1.3rem;
+  float: right;
 }
 
 .link {
   text-transform: uppercase;
-  color: white;
+  color: var(--color-secondary);
   text-decoration: none;
   margin-right: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
+  display: inline-block;
+  float: right;
 }

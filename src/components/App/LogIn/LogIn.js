@@ -15,8 +15,6 @@ class LogIn extends Component {
 
   render() {
     const { fields: { email, password }, handleSubmit, user} = this.props;
-    // const logInStatus = this.props.logInUser.status;
-    console.log(user);
     return (
       <div className={s.root}>
         <form onSubmit={handleSubmit(this.props.logInUser)}>

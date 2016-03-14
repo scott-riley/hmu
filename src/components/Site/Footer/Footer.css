@@ -1,9 +1,15 @@
 .root {
-  padding: 1rem 0;
-  border-top: 1px solid black;
+  padding: 1rem 0 1rem;
+  background: var(--color-secondary);
 }
 
 .copyNotice {
-  font-size: var(--font-size-iota);
-  text-transform: uppercase;
+  font-family: "Roboto";
+  color: white;
+  color: white;
+  text-align: center;
+}
+
+.link {
+  color: white;
 }

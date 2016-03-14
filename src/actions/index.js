@@ -11,7 +11,6 @@ const HMU_API = 'http://localhost:3000';
 
 export function logInUser(props) {
   const {email, password} = props;
-  console.log(props);
   const grant_type = "password";
   const requestData = {
     username: email,
