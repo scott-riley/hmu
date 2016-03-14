@@ -1,0 +1,24 @@
+.root {
+  background: white;
+  padding: 2rem;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
+}
+
+.logo {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  font-weight: 900;
+  letter-spacing: .3rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.emoji {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1rem;
+  vertical-align: top;
+}

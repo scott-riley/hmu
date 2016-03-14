@@ -25,8 +25,8 @@ module.exports = (
 		{/*Application*/}
 		<Route path="/app" component={AppContainer}>
 			<IndexRoute component={MainScreen} />
-			<Route path="login" component={LogIn} />
 			<Route path="messages" component={MessageList} />
+			<Route path="login" component={LogIn} />
 		</Route>
 	</Router>
 );

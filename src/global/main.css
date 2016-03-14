@@ -9,4 +9,16 @@
 
 :global * {
   box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+:global body,
+:global html {
+	margin: 0;
+	padding: 0;
+}
+
+:global body {
+	background: #fafafa;
+	overflow: hidden;
 }

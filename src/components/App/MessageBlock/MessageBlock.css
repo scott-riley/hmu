@@ -1,0 +1,46 @@
+.root {
+  height: 100vh;
+  width: 100%;
+  border-left: 1px solid #eaeaea;
+  background: white;
+}
+
+.header {
+  border-bottom: 1px solid #eaeaea;
+  padding: 2rem;
+}
+
+.body {
+  padding: 2rem;
+  color: #555;
+  lost-utility: clearfix;
+}
+
+.date {
+  margin-left: 3rem;
+  color: #777;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.email {
+  margin-top: .5rem;
+  font-weight: 700;
+}
+
+.email a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.fieldHeader {
+  font-weight: 100;
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin-bottom: .4rem;
+  color: black;
+}
+
+.thinData {
+  lost-column: 1/4;
+}

@@ -1,7 +1,12 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchMessages} from 'actions/index';
+import {fetchMessages, setActiveMessage} from 'actions/index';
+
+import MessageItem from 'components/App/MessageItem/MessageItem';
+import MessageBlock from 'components/App/MessageBlock/MessageBlock';
+
+import s from './MessageList.css';
 
 class MessageList extends Component {
   constructor(props) {
@@ -13,12 +18,18 @@ class MessageList extends Component {
     this.props.fetchMessages();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.messages.perform == "redirect") {
+      this.context.router.push('/app/login');
+    }
+  }
+
   renderMessages(messages) {
     return(
       messages.map( (message) => {
         if(message.message) {
           return (
-            <div key={message.id}>{message.message._data.email}</div>
+            <MessageItem message={message.message._data} key={message.message._data.id} onClick={ () => { this.props.setActiveMessage(message.message._data)} } activeMessage={this.props.activeMessage} />
           )
         }
       })
@@ -26,34 +37,51 @@ class MessageList extends Component {
   }
 
   handleClick() {
-    console.log("Fetching in click");
     this.props.fetchMessages();
   }
 
   render() {
-    const {messages} = this.props;
+    const {messages, activeMessage} = this.props;
+    console.log("RENDER ACTIVE MESSAGE:", activeMessage);
     return (
-      <div>
-        <h2>Your Messages</h2>
-        <span onClick={() => { this.handleClick() } }>Load</span>
-        {messages && messages.length > 0 ?
-            this.renderMessages(messages)
-          :
-            "No messages"
-        }
+      <div className={s.root}>
+        <div className={s.sidebar}>
+          <h2 className={s.inboxHeader}>Your Messages</h2>
+          {messages && messages.length > 0 ?
+              <div>
+                {this.renderMessages(messages)}
+              </div>
+            :
+              "No messages"
+          }
+        </div>
+
+        <div className={s.message}>
+          {
+            activeMessage.id ?
+              <MessageBlock message={activeMessage} />
+            :
+              null
+          }
+        </div>
       </div>
     );
   }
 }
 
+MessageList.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+}
+
 function mapStateToProps(state) {
   return {
     messages: state.messages,
+    activeMessage: state.activeMessage
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMessages: fetchMessages }, dispatch);
+  return bindActionCreators({ fetchMessages: fetchMessages, setActiveMessage: setActiveMessage }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);

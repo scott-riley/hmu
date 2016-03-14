@@ -1,0 +1,33 @@
+.root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding-left: 350px;
+  position: relative;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.inboxHeader {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  color: #555;
+}
+
+.message {
+  height: 100vh;
+  width: 100%;
+  background: white;
+  border-left: 1px solid #eaeaea;
+  overflow: scroll;
+}

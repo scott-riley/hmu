@@ -4,6 +4,7 @@ export const LOG_IN_USER = 'LOG_IN_USER';
 export const LOG_OUT_USER = 'LOG_OUT_USER';
 export const UPDATE_ACTIVE_MESSAGE = 'UPDATE_ACTIVE_MESSAGE';
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
+export const SET_ACTIVE_MESSAGE = 'SET_ACTIVE_MESSAGE';
 
 const HMU_API = 'http://localhost:3000';
 
@@ -29,5 +30,12 @@ export function fetchMessages() {
   return {
     type: FETCH_MESSAGES,
     payload: request,
+  }
+}
+
+export function setActiveMessage(message) {
+  return {
+    type: SET_ACTIVE_MESSAGE,
+    payload: message,
   }
 }

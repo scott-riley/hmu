@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import {logInUser} from 'actions/index';
 import Btn from 'components/Global/Btn/Btn';
@@ -6,6 +6,12 @@ import Btn from 'components/Global/Btn/Btn';
 import s from './LogIn.css';
 
 class LogIn extends Component {
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.user.status == "success") {
+      this.context.router.push('/app/messages');
+    }
+  };
 
   render() {
     const { fields: { email, password }, handleSubmit, user} = this.props;
@@ -30,6 +36,10 @@ class LogIn extends Component {
       </div>
     );
   }
+}
+
+LogIn.contextTypes = {
+  router: React.PropTypes.object.isRequired,
 }
 
 function mapStateToProps(state) {
