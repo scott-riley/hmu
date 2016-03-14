@@ -21,10 +21,10 @@
 
 .date {
   color: #777;
-  font-style: italic;
-  font-weight: 100;
+  font-weight: 400;
   margin-left: 15vw;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-size: .8rem;
 }
 
 .email {

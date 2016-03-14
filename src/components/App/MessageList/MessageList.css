@@ -22,6 +22,7 @@
   padding-left: 2rem;
   padding-top: 1rem;
   color: #555;
+  font-size: .9rem;
 }
 
 .message {
@@ -30,4 +31,9 @@
   background: white;
   border-left: 1px solid #eaeaea;
   overflow: scroll;
+}
+
+.messageLink {
+  color: inherit;
+  text-decoration: none;
 }

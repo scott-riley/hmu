@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchMessages, setActiveMessage} from 'actions/index';
+import {fetchMessages, setActiveMessage, fetchActiveMessage} from 'actions/index';
+import {Link} from 'react-router';
 
 import MessageItem from 'components/App/MessageItem/MessageItem';
 import MessageBlock from 'components/App/MessageBlock/MessageBlock';
@@ -16,11 +17,17 @@ class MessageList extends Component {
 
   componentDidMount() {
     this.props.fetchMessages();
+    if(this.props.params.message) {
+      this.props.fetchActiveMessage(this.props.params.message)
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.messages.perform == "redirect") {
       this.context.router.push('/app/login');
+    }
+    if(nextProps.params.message != this.props.params.message) {
+      this.props.fetchActiveMessage(nextProps.params.message)
     }
   }
 
@@ -29,7 +36,9 @@ class MessageList extends Component {
       messages.map( (message) => {
         if(message.message) {
           return (
-            <MessageItem message={message.message._data} key={message.message._data.id} onClick={ () => { this.props.setActiveMessage(message.message._data)} } activeMessage={this.props.activeMessage} />
+            <Link to={`/app/messages/${message.message._data.id}`} key={message.message._data.id} className={s.messageLink}>
+              <MessageItem message={message.message._data} onClick={ () => { this.props.setActiveMessage(message.message._data)} } activeMessage={this.props.activeMessage} />
+            </Link>
           )
         }
       })
@@ -81,7 +90,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMessages: fetchMessages, setActiveMessage: setActiveMessage }, dispatch);
+  return bindActionCreators({ fetchMessages: fetchMessages, setActiveMessage: setActiveMessage, fetchActiveMessage: fetchActiveMessage }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
