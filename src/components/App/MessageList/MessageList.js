@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchMessages, setActiveMessage, fetchActiveMessage} from 'actions/index';
+import {fetchMessages, setActiveMessage, fetchActiveMessage, markMessageAsRead} from 'actions/index';
 import {Link} from 'react-router';
 
 import MessageItem from 'components/App/MessageItem/MessageItem';
@@ -27,16 +27,17 @@ class MessageList extends Component {
       this.context.router.push('/app/login');
     }
     if(nextProps.params.message != this.props.params.message) {
-      this.props.fetchActiveMessage(nextProps.params.message)
+      this.props.fetchActiveMessage(nextProps.params.message);
+      this.props.markMessageAsRead(nextProps.params.message);
     }
   }
 
   renderMessages(messages) {
     return(
-      messages.map( (message) => {
+      messages.map( (message, index) => {
         if(message.message) {
           return (
-            <Link to={`/app/messages/${message.message._data.id}`} key={message.message._data.id} className={s.messageLink}>
+            <Link to={`/app/messages/${message.message._data.id}`} key={`${index}`} className={s.messageLink}>
               <MessageItem message={message.message._data} onClick={ () => { this.props.setActiveMessage(message.message._data)} } activeMessage={this.props.activeMessage} />
             </Link>
           )
@@ -89,7 +90,12 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMessages: fetchMessages, setActiveMessage: setActiveMessage, fetchActiveMessage: fetchActiveMessage }, dispatch);
+  return bindActionCreators({
+    fetchMessages: fetchMessages,
+    setActiveMessage: setActiveMessage,
+    fetchActiveMessage: fetchActiveMessage,
+    markMessageAsRead: markMessageAsRead,
+  }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);

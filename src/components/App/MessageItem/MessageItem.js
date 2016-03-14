@@ -8,9 +8,13 @@ export default class MessageItem extends Component {
   render() {
     const {children, message, onClick, activeMessage} = this.props;
     const classNames = [s.root];
+
     if(activeMessage && message) {
       if(activeMessage.id == message.id) {
-        classNames.push(s.active)
+        classNames.push(s.active);
+      }
+      else if(!message.status) {
+        classNames.push(s.new);
       }
     }
 

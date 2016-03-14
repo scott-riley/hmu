@@ -6,6 +6,7 @@ export const UPDATE_ACTIVE_MESSAGE = 'UPDATE_ACTIVE_MESSAGE';
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const SET_ACTIVE_MESSAGE = 'SET_ACTIVE_MESSAGE';
 export const FETCH_ACTIVE_MESSAGE = 'FETCH_ACTIVE_MESSAGE';
+export const MARK_MESSAGE_AS_READ = 'MARK_MESSAGE_AS_READ';
 
 const HMU_API = 'http://localhost:3000';
 
@@ -45,6 +46,17 @@ export function fetchActiveMessage(message) {
   const request = axios.get(`${HMU_API}/messages/single/${message}?access_token=${token}`);
   return {
     type: FETCH_ACTIVE_MESSAGE,
+    payload: request,
+  }
+}
+
+export function markMessageAsRead(message) {
+  const token = localStorage.getItem('token');
+  const request = axios.put(`${HMU_API}/messages/single/${message}?access_token=${token}`, {
+    status: "read"
+  });
+  return {
+    type: MARK_MESSAGE_AS_READ,
     payload: request,
   }
 }

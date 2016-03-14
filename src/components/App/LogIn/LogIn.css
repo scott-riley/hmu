@@ -1,10 +1,11 @@
 .root {
   max-width: 450px;
   margin: auto;
-  padding: 4rem;
+  padding: 4rem 4rem 0;
   border: 1px solid var(--color-secondary);
   border-radius: 4px;
   margin-top: 5rem;
+  background: white;
 }
 
 .formGroup {
@@ -24,5 +25,20 @@
   width: 100%;
   padding: 1rem .5rem;
   border: none;
-  border-bottom: 1px solid var(--color-secondary);
+  border-bottom: 1px solid #333;
+  font-size: 1.2rem;
+}
+
+.formGroup input:focus {
+  border-bottom-color: var(--color-secondary);
+}
+
+.error {
+  background: red;
+  color: white;
+  margin-top: -2rem;
+  margin-bottom: 1.7rem;
+  border-radius: 4px;
+  padding: 1rem;
+  line-height: 1.4;
 }

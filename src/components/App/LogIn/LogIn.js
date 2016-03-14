@@ -18,7 +18,10 @@ class LogIn extends Component {
     return (
       <div className={s.root}>
         <form onSubmit={handleSubmit(this.props.logInUser)}>
-          { user.status ? user.status : null }
+          { user.status ?
+            <div className={s.error}>{user.status}</div>
+          :
+            null }
           <div className={s.formGroup}>
             <label>Email</label>
             <input type="email" name="email" placeholder="Your email" {...email} />
@@ -28,7 +31,7 @@ class LogIn extends Component {
             <input type="password" name="password" placeholder="Your password" {...password} />
           </div>
           <div className={s.formGroup}>
-            <Btn modifier="blank">Log in</Btn>
+            <Btn modifier="full">Log in</Btn>
           </div>
         </form>
       </div>

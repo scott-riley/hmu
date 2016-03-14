@@ -13,7 +13,7 @@ export default class Btn extends Component {
       href ?
         <a className={classNames} href={href}>{children}</a>
       :
-        <button className={s.root} onClick={onClick}>
+        <button className={classNames} onClick={onClick}>
           {children}
         </button>
     )

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import {Link} from 'react-router';
 import Btn from 'components/Global/Btn/Btn';
 import Wrapper from 'components/Global/Wrapper/Wrapper';
 
@@ -13,9 +13,9 @@ export default class Nav extends Component {
           <div className={s.logo}>
             HMU.<span className={s.emoji}>🕶</span>
           </div>
-          <a href="/login" className={s.link}>
+          <Link to="app/login" className={s.link}>
             Log in
-          </a>
+          </Link>
         </Wrapper>
       </nav>
     )

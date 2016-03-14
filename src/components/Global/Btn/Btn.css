@@ -1,4 +1,4 @@
-  .root {
+.root {
   border-radius: 80px;
   border: 1px solid;
   color: var(--color-secondary);
@@ -7,6 +7,7 @@
   padding: 1.4em 1.8em;
   text-decoration: none;
   background: white;
+  font-size: 1.1rem;
 }
 
 .root:hover {
@@ -20,4 +21,8 @@
 .blank {
   border: none;
   background: transparent;
+}
+
+.full {
+  width: 100%;
 }

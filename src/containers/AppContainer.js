@@ -11,6 +11,8 @@ import Sidebar from 'components/App/Sidebar/Sidebar';
 
 import Nav from 'components/App/Nav/Nav';
 
+import s from './App.css';
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 export default class AppContainer extends Component {
@@ -23,7 +25,7 @@ export default class AppContainer extends Component {
 	render () {
 		return (
 			<Provider store={createStoreWithMiddleware(reducers)}>
-				<div>
+				<div className={s.root}>
 					<Nav />
 					<main>
 						{this.props.children}
