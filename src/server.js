@@ -44,7 +44,7 @@ try {
             <html lang="en-us">
               <head>
                 <meta charset="utf-8">
-                <title>Strtkt – we so startup m8s</title>
+                <title>HMU – Dat Endpoint</title>
                 <link rel="shortcut icon" href="/favicon.ico">
                 ${styleTag}
                 <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300,900,400italic' rel='stylesheet' type='text/css'>
