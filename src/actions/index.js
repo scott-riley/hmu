@@ -10,6 +10,7 @@ export const MARK_MESSAGE_AS_READ = 'MARK_MESSAGE_AS_READ';
 export const SIGN_UP_USER = 'SIGN_UP_USER';
 export const FETCH_USER = 'FETCH_USER';
 export const FETCH_KEY = 'FETCH_KEY';
+export const EDIT_EMAIL = 'EDIT_EMAIL';
 
 const HMU_API = 'http://localhost:3000';
 
@@ -94,6 +95,21 @@ export function fetchKey() {
   const request = axios.get(`${HMU_API}/user_keys?access_token=${token}`);
   return {
     type: FETCH_KEY,
+    payload: request,
+  }
+}
+
+export function editEmail(props) {
+  const {email} = props;
+  const token = localStorage.getItem('token');
+  const id = localStorage.getItem('id');
+  const requestData = {
+    email: email,
+    username: email,
+  };
+  const request = axios.put(`${HMU_API}/users/${id}?access_token=${token}`, requestData);
+  return {
+    type: EDIT_EMAIL,
     payload: request,
   }
 }

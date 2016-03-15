@@ -4,7 +4,6 @@ import {SIGN_UP_USER} from 'actions/index';
 export default function(state = INITIAL_STATE.signUp, action) {
   switch(action.type) {
     case SIGN_UP_USER:
-      console.log(action.payload.data);
       if(action.payload.data.meta.total > 0) {
         localStorage.setItem('token', action.payload.data.data[0].access_token);
         const userId =action.payload.data.data[0].user_id;
