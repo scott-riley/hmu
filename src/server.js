@@ -4,7 +4,6 @@ import cors from "koa-cors";
 import koaProxy from "koa-proxy";
 import koaStatic from "koa-static";
 import compressor from "koa-compressor";
-import ssl from 'koa-force-ssl';
 import React from "react";
 import ReactDOM from "react-dom/server";
 import * as ReactRouter from "react-router";

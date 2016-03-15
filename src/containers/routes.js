@@ -26,7 +26,7 @@ module.exports = (
 
 		{/*Application*/}
 		<Route path="/app" component={AppContainer}>
-			<IndexRoute component={MainScreen} />
+			<IndexRoute component={MessageList} />
 			<Route path="messages" component={MessageList} />
 			<Route path="messages/:message" component={MessageList} />
 			<Route path="login" component={LogIn} />
