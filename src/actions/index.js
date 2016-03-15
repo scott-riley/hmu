@@ -9,8 +9,9 @@ export const FETCH_ACTIVE_MESSAGE = 'FETCH_ACTIVE_MESSAGE';
 export const MARK_MESSAGE_AS_READ = 'MARK_MESSAGE_AS_READ';
 export const SIGN_UP_USER = 'SIGN_UP_USER';
 export const FETCH_USER = 'FETCH_USER';
+export const FETCH_KEY = 'FETCH_KEY';
 
-const HMU_API = 'https://api.hmu.cool';
+const HMU_API = 'http://localhost:3000';
 
 export function logInUser(props) {
   const {email, password} = props;
@@ -84,6 +85,15 @@ export function fetchUser() {
   const request = axios.get(`${HMU_API}/users/${id}?access_token=${token}`);
   return {
     type: FETCH_USER,
+    payload: request,
+  }
+}
+
+export function fetchKey() {
+  const token = localStorage.getItem('token');
+  const request = axios.get(`${HMU_API}/user_keys?access_token=${token}`);
+  return {
+    type: FETCH_KEY,
     payload: request,
   }
 }

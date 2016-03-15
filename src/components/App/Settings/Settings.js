@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {fetchKey} from 'actions/index';
 
 import s from './Settings.css';
 import Btn from 'components/Global/Btn/Btn';
 
 import EmailForm from './EmailForm.js'
 
-export default class Settings extends Component {
+class Settings extends Component {
+
+  componentDidMount() {
+    this.props.fetchKey();
+  }
+
   render() {
+    const {userKey} = this.props;
     return (
       <div className={s.root}>
         <div className={s.container}>
@@ -16,7 +25,7 @@ export default class Settings extends Component {
           <div className={s.form}>
             <h3>Your endpoint</h3>
             <div className={s.formGroup}>
-              <code className={s.key}>http://api.hmu.cool/messages/7f0c6d2de507ae96e8920202013b4116</code>
+              <code className={s.key}>{`http://api.hmu.cool/messages/${userKey.key}`}</code>
               <div className={s.helperText}>Use this endpoint to <code className={s.inlineCode}>POST</code> data to.</div>
             </div>
           </div>
@@ -43,3 +52,17 @@ export default class Settings extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userKey: state.userKey,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    fetchKey: fetchKey,
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);
