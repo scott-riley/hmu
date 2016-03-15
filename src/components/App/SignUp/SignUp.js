@@ -8,9 +8,9 @@ import s from './SignUp.css';
 class SignUp extends Component {
 
   componentWillReceiveProps(nextProps) {
-    // if(nextProps.signUp.status == "success") {
-    //   this.context.router.push('/app/welcome');
-    // }
+    if(nextProps.signUp.status == "success") {
+      this.context.router.push('/app/welcome');
+    }
   };
 
   render() {
