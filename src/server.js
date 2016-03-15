@@ -21,7 +21,7 @@ try {
 	app.use(compressor());
   app.use(cors());
   app.use(koaStatic("static"));
-  app.use(ssl(port));
+  app.use(ssl());
   app.use(function *(next) {
     yield ((callback) => {
       const webserver = __PRODUCTION__ ? "" : `//${this.hostname}:8080`;
