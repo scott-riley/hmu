@@ -30,6 +30,7 @@ export default class AppContainer extends Component {
 					<main>
 						{this.props.children}
 					</main>
+					<div className={s.beta}><b>BETA!</b> – HMU is currently in open beta. Shit might go a bit weird erry now and then.</div>
 				</div>
 			</Provider>
 		);

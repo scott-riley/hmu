@@ -1,3 +1,16 @@
 .root {
   background: var(--color-secondary);
 }
+
+.beta {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: block;
+  z-index: 999;
+  width: 100%;
+  padding: 1.3rem;
+  text-align: center;
+  background: var(--color-secondary);
+  color: white;
+}
