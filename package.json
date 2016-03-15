@@ -42,6 +42,7 @@
     "koa-compress": "^1.0.9",
     "koa-compressor": "^1.0.3",
     "koa-cors": "0.0.16",
+    "koa-force-ssl": "0.0.5",
     "koa-proxy": "0.5.0",
     "koa-static": "2.0.0",
     "lost": "^6.7.1",

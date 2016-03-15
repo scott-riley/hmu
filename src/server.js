@@ -4,7 +4,7 @@ import cors from "koa-cors";
 import koaProxy from "koa-proxy";
 import koaStatic from "koa-static";
 import compressor from "koa-compressor";
-import ssl from 'koa-ssl';
+import ssl from 'koa-force-ssl';
 import React from "react";
 import ReactDOM from "react-dom/server";
 import * as ReactRouter from "react-router";
@@ -21,6 +21,7 @@ try {
 	app.use(compressor());
   app.use(cors());
   app.use(koaStatic("static"));
+  app.use(ssl(port));
   app.use(function *(next) {
     yield ((callback) => {
       const webserver = __PRODUCTION__ ? "" : `//${this.hostname}:8080`;
