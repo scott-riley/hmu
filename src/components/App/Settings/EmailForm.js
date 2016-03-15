@@ -45,6 +45,14 @@ class EmailForm extends Component {
           <div className={s.formGroup}>
             <Btn modifier="inverted">Save email</Btn>
           </div>
+          { user.status == "save-success" ?
+              <div className={s.successMessage}>Changes saved</div>
+            : user.status ?
+              <div className={s.errorMessage}>Oops! We couldn’t save your email, please try again.</div>
+            : null
+          }
+
+
         </form>
       </div>
     );

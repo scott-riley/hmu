@@ -33,7 +33,7 @@ class Settings extends Component {
           <EmailForm />
 
 
-          <form className={s.form}>
+          {/*<form className={s.form}>
             <h3>Change your password</h3>
             <div className={s.formGroup}>
               <label for="password">New password</label>
@@ -46,7 +46,7 @@ class Settings extends Component {
             <div className={s.formGroup}>
               <Btn modifier="inverted">Save new password</Btn>
             </div>
-          </form>
+          </form>*/}
         </div>
       </div>
     );

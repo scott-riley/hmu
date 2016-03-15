@@ -26,7 +26,8 @@ export default function(state = INITIAL_STATE.user, action) {
       if(emailData.meta.error) {
         return { ...state, status: "Oops, we couldn’t save your email." }
       }
-      return emailData.data[0];
+      const returnData = emailData.data[0];
+      return { ...returnData, status: "save-success" };
     default:
       return state;
   }

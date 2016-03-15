@@ -69,3 +69,20 @@
   background: #eaeaea;
   border-radius: 3px;
 }
+
+.errorMessage, .successMessage {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.3rem;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.errorMessage {
+  background: red;
+}
+
+.successMessage {
+  background: green;
+}
