@@ -9,7 +9,7 @@ export const FETCH_ACTIVE_MESSAGE = 'FETCH_ACTIVE_MESSAGE';
 export const MARK_MESSAGE_AS_READ = 'MARK_MESSAGE_AS_READ';
 export const SIGN_UP_USER = 'SIGN_UP_USER';
 
-const HMU_API = 'http://localhost:3000';
+const HMU_API = 'http://hmu-api.herokuapp.com';
 
 export function logInUser(props) {
   const {email, password} = props;
