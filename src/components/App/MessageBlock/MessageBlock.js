@@ -12,11 +12,11 @@ export default class MessageBlock extends Component {
     for(var propt in fields) {
       if(propt != "name" && propt != "subject") {
         let className = "";
-        if(propt.length < 20 && fields[propt].length < 20) {
+        if(propt.length < 20 && fields[propt].length < 45) {
           className = s.thinData;
           shortJSX.push (
             <div key={`${message.id}-${propt}-full`} className={className}>
-              <h3 className={s.fieldHeader}>{propt.replace('_', ' ')}</h3>
+              <h3 className={s.fieldHeader}>{propt.split('_').join(' ')}</h3>
               <span className={s.data}>{fields[propt]}</span>
             </div>
           );
@@ -25,7 +25,7 @@ export default class MessageBlock extends Component {
           className = s.longData;
           longJSX.push (
             <div key={`${message.id}-${propt}-full`} className={className}>
-              <h3 className={s.fieldHeader}>{propt.replace('_', ' ')}</h3>
+              <h3 className={s.fieldHeader}>{propt.split('_').join(' ')}</h3>
               <span className={s.data}>{fields[propt]}</span>
             </div>
           );

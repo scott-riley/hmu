@@ -7,6 +7,7 @@ export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const SET_ACTIVE_MESSAGE = 'SET_ACTIVE_MESSAGE';
 export const FETCH_ACTIVE_MESSAGE = 'FETCH_ACTIVE_MESSAGE';
 export const MARK_MESSAGE_AS_READ = 'MARK_MESSAGE_AS_READ';
+export const SIGN_UP_USER = 'SIGN_UP_USER';
 
 const HMU_API = 'http://localhost:3000';
 
@@ -57,6 +58,21 @@ export function markMessageAsRead(message) {
   });
   return {
     type: MARK_MESSAGE_AS_READ,
+    payload: request,
+  }
+}
+
+export function signUpUser(props) {
+  const {email, password} = props;
+  const username = email;
+  const signUpData = {
+    username: username,
+    email: email,
+    password: password
+  }
+  const request = axios.post(`${HMU_API}/users`, signUpData);
+  return {
+    type: SIGN_UP_USER,
     payload: request,
   }
 }

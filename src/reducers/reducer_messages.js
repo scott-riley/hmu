@@ -9,7 +9,12 @@ export default function(state = INITIAL_STATE.messages, action) {
           perform: "redirect"
         }
       }
-      return action.payload.data.data;
+      else if(action.payload.data.meta.total > 0) {
+        return action.payload.data.data;
+      }
+      else {
+        return state;
+      }
     case MARK_MESSAGE_AS_READ:
       const updateData = action.payload.data.data[0];
       const newState = [];

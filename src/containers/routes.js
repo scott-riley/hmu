@@ -14,6 +14,7 @@ import AppContainer from "./AppContainer";
 import MainScreen from 'components/App/MainScreen/MainScreen';
 import LogIn from 'components/App/LogIn/LogIn';
 import MessageList from 'components/App/MessageList/MessageList';
+import SignUp from 'components/App/SignUp/SignUp';
 
 module.exports = (
 	<Router>
@@ -28,6 +29,8 @@ module.exports = (
 			<Route path="messages" component={MessageList} />
 			<Route path="messages/:message" component={MessageList} />
 			<Route path="login" component={LogIn} />
+			<Route path="signup" component={SignUp} />
+			<Route path="welcome" component={MessageList} />
 		</Route>
 	</Router>
 );
