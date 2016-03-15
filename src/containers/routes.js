@@ -15,6 +15,7 @@ import MainScreen from 'components/App/MainScreen/MainScreen';
 import LogIn from 'components/App/LogIn/LogIn';
 import MessageList from 'components/App/MessageList/MessageList';
 import SignUp from 'components/App/SignUp/SignUp';
+import Settings from 'components/App/Settings/Settings';
 
 module.exports = (
 	<Router>
@@ -31,6 +32,7 @@ module.exports = (
 			<Route path="login" component={LogIn} />
 			<Route path="signup" component={SignUp} />
 			<Route path="welcome" component={MessageList} />
+			<Route path="settings" component={Settings} />
 		</Route>
 	</Router>
 );

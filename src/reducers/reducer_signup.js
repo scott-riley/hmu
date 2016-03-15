@@ -7,7 +7,9 @@ export default function(state = INITIAL_STATE.signUp, action) {
       console.log(action.payload.data);
       if(action.payload.data.meta.total > 0) {
         localStorage.setItem('token', action.payload.data.data[0].access_token);
-        return { status: "success" }
+        const userId =action.payload.data.data[0].user_id;
+        localStorage.setItem('id', userId);
+        return { status: "success", id: userId }
       }
       else if(action.payload.data.meta.error.message) {
         if(action.payload.data.meta.error.message.indexOf('duplicate') > -1) {

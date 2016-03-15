@@ -8,6 +8,7 @@
   text-decoration: none;
   background: white;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .root:hover {
@@ -21,8 +22,16 @@
 .blank {
   border: none;
   background: transparent;
+  padding-left: 0;
 }
 
 .full {
   width: 100%;
+}
+
+.inverted {
+  background: var(--color-secondary);
+  font-size: .9rem;
+  border-radius: 4px;
+  color: white;
 }

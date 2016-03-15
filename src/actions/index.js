@@ -8,8 +8,9 @@ export const SET_ACTIVE_MESSAGE = 'SET_ACTIVE_MESSAGE';
 export const FETCH_ACTIVE_MESSAGE = 'FETCH_ACTIVE_MESSAGE';
 export const MARK_MESSAGE_AS_READ = 'MARK_MESSAGE_AS_READ';
 export const SIGN_UP_USER = 'SIGN_UP_USER';
+export const FETCH_USER = 'FETCH_USER';
 
-const HMU_API = 'http://hmu-api.herokuapp.com';
+const HMU_API = 'https://api.hmu.cool';
 
 export function logInUser(props) {
   const {email, password} = props;
@@ -73,6 +74,16 @@ export function signUpUser(props) {
   const request = axios.post(`${HMU_API}/users`, signUpData);
   return {
     type: SIGN_UP_USER,
+    payload: request,
+  }
+}
+
+export function fetchUser() {
+  const token = localStorage.getItem('token');
+  const id = localStorage.getItem('id');
+  const request = axios.get(`${HMU_API}/users/${id}?access_token=${token}`);
+  return {
+    type: FETCH_USER,
     payload: request,
   }
 }

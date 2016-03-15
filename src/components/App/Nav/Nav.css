@@ -13,6 +13,7 @@
   letter-spacing: .3rem;
   line-height: 1;
   vertical-align: middle;
+  display: inline-block;
 }
 
 .emoji {
@@ -21,4 +22,16 @@
   font-weight: normal;
   line-height: 1rem;
   vertical-align: top;
+}
+
+.links {
+  display: inline-block;
+  margin-left: 3rem;
+}
+
+.links a {
+  font-weight: 100;
+  color: #222;
+  text-decoration: none;
+  margin-right: 2rem;
 }
