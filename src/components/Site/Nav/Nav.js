@@ -7,22 +7,16 @@ import s from './Nav.css'
 
 export default class Nav extends Component {
   render() {
-    const token = localStorage.getItem('token');
+    // const token = localStorage ? localStorage.getItem('token') : null;
     return (
       <nav className={s.root}>
         <Wrapper>
           <div className={s.logo}>
             HMU.<span className={s.emoji}>🕶</span>
           </div>
-          { token ?
-              <Link to="app/" className={s.link}>
-                Your messages
-              </Link>
-            :
-              <Link to="app/login" className={s.link}>
-                Log in
-              </Link>
-          }
+          <Link to="app/login" className={s.link}>
+            Log in
+          </Link>
         </Wrapper>
       </nav>
     )
