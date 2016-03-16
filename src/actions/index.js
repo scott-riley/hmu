@@ -117,7 +117,7 @@ export function editEmail(props) {
 
 export function deleteMessage(id) {
   const token = localStorage.getItem('token');
-  const request = axios.delete(`${HMU_API}/messages/single/${id}?access_token=${token}`);
+  // const request = axios.delete(`${HMU_API}/messages/single/${id}?access_token=${token}`);
   return {
     type: DELETE_MESSAGE,
     payload: id,

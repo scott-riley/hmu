@@ -59,10 +59,6 @@ class MessageBlock extends Component {
                   </div>
                 </div>
 
-                <div className={s.delete}>
-                  <span onClick={() => this.props.deleteMessage(message.id)}>Delete</span>
-                </div>
-
                 { message.fields && message.fields.subject ?
                     <div className={s.subject}>
                       {message.fields.subject}
@@ -77,6 +73,10 @@ class MessageBlock extends Component {
                   </span>
                 </div>
 
+                <div className={s.delete}>
+                  <span onClick={() => this.props.deleteMessage(message.id)}>Delete</span>
+                </div>
+                
               </div>
 
               <div className={s.body}>

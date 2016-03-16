@@ -68,3 +68,12 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.delete {
+  display: inline-block;
+  cursor: pointer;
+  color: red;
+  position: absolute;
+  right: 5rem;
+  top: 2rem;
+}
