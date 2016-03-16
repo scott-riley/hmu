@@ -23,10 +23,12 @@ export default class Docs extends Component {
             </ol>
             <h3>Your endpoint URL</h3>
             <p>You can find your endpoint URL on your <a href="/app/settings">settings page</a>. This is a public URL that you can use to start receiving messages. And will look something like <code className={s.inlineCode}>http://api.hmu.cool/messages/blahblahblahkissurdad</code>.</p>
+            <h3>HTTP/HTTPS</h3>
+            <p>Your endpoint can be standard http or https. If your site is secured by SSL and you’re sending people to a https:// URL, you’ll want to make sure your site protocol and HMU URL protocol match or you’ll likely get mixed content warnings. You can either use relative protocols (//api.hmu.cool) or make sure you explicitly use https://.</p>
             <h3>Data structure</h3>
             <p>HMU expects a JSON structure that includes the following information:</p>
             <p><strong>email (string):</strong> The email of the sender. This is optional but it’s the default way of idenitifying request senders.</p>
-            <p><strong>fields (JSON):</strong> A JSON object full of the fields you want to be associated with a message. This should be a single-level, key:value JSON object. Currently only numerical and text values are supported, so no weird image uploads okay thx. It also doesn’t play nice with JSON nested deeper than the first level of this fields object, so if you’re looking to send deeper-nested JSON then just know that it’ll likely get parsed like shit right now.</p>
+            <p><strong>fields (object):</strong> An object full of the fields you want to be associated with a message. This should be a single-level, key:value JSON object. Currently only numerical and text values are supported, so no weird image uploads okay thx. It also doesn’t play nice with JSON nested deeper than the first level of this fields object, so if you’re looking to send deeper-nested JSON then just know that it’ll likely get parsed like shit right now.</p>
             <p>A common request object might look a little like this:</p>
             <iframe height='268' scrolling='no' src='//codepen.io/scott_riley/embed/ONbrjZ/?height=268&theme-id=0&default-tab=js' frameborder='no' allowtransparency='true' allowfullscreen='true' style={ { width: "100%" } } >
             </iframe>
