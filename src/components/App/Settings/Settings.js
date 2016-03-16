@@ -12,9 +12,6 @@ class Settings extends Component {
 
   componentDidMount() {
     this.props.fetchKey();
-    if(!localStorage.getItem('token')) {
-      this.context.router.push('/app/login');
-    }
   }
 
   componentWillReceiveProps(nextProps) {
