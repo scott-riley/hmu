@@ -57,6 +57,7 @@
     "postcss-loader": "^0.8.0",
     "react": "0.14.7",
     "react-dom": "0.14.7",
+    "react-gist-embed": "0.0.3",
     "react-redux": "^4.4.1",
     "react-router": "2.0.0",
     "react-transmit": "3.1.7",

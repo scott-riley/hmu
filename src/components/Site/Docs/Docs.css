@@ -1,0 +1,94 @@
+.root {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+}
+
+.intro {
+  max-width: 800px;
+  margin: auto;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.heading {
+  font-size: 3.7rem;
+  font-style: italic;
+  color: var(--color-secondary);
+  font-weight: bold;
+  margin-top: 0;
+  font-family: "Gentium Book Basic", serif;
+  font-weight: 700;
+  font-size: 3.7rem;
+  font-style: italic;
+  letter-spacing: -1px;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.copy {
+  max-width: 600px;
+  margin: auto;
+  padding-top: .5rem;
+  font-size: 1.3rem;
+  line-height: 1.75;
+  padding-bottom: 1.4rem;
+}
+
+@media (min-width: 900px) {
+  .heading {
+    font-size: 5.7rem;
+  }
+  .copy {
+    font-size: 1rem;
+  }
+}
+
+.docsContent {
+  border-top: 2px solid var(--color-secondary);
+  padding-top: 3rem;
+}
+
+.contentSection {
+  max-width: 800px;
+  padding: 0 5%;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding-bottom: 10rem;
+}
+
+.contentSection h2 {
+  font-size: 2rem;
+  font-style: italic;
+  font-family: "Gentium Book Basic", serif;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0;
+  color: var(--color-secondary);
+  margin-top: 4rem;
+}
+
+.contentSection h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: .7rem;
+  padding-bottom: 0;
+  margin-top: 3.3rem;
+}
+
+.contentSection h2 + h3 {
+  margin-top: .3rem;
+}
+
+.contentSection p,
+.contentSection ol {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.inlineCode {
+  display: inline-block;
+  padding: .4rem;
+  background: #f4f4f4;
+  border-radius: 3px;
+}

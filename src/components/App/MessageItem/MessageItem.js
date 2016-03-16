@@ -25,7 +25,7 @@ export default class MessageItem extends Component {
     return (
       <div className={classNames.join(' ')} onClick={onClick}>
         <div className={s.col}>
-          { message.fields.subject ?
+          { message.fields && message.fields.subject ?
               <div className={s.subject}>
                 {message.fields.subject}
               </div>
@@ -33,7 +33,7 @@ export default class MessageItem extends Component {
               null
           }
           <span className={s.from}>
-            { message.fields.name ?
+            { message.fields && message.fields.name ?
                 message.fields.name
               :
                 message.email

@@ -49,13 +49,13 @@ export default class MessageBlock extends Component {
               <div className={s.header}>
 
                 <div className={s.meta}>
-                  {message.fields.name}
+                  {message.fields && message.fields.name}
                   <div className={s.email}>
                     <a href={`mailto:${message.email}`}>{message.email}</a>
                   </div>
                 </div>
 
-                { message.fields.subject ?
+                { message.fields && message.fields.subject ?
                     <div className={s.subject}>
                       {message.fields.subject}
                     </div>
