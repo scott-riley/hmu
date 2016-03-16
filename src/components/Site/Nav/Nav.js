@@ -14,6 +14,9 @@ export default class Nav extends Component {
           <div className={s.logo}>
             HMU.<span className={s.emoji}>🕶</span>
           </div>
+          <Link to="/docs" className={s.link}>
+            Docs
+          </Link>
           <Link to="app/login" className={s.link}>
             Log in
           </Link>
