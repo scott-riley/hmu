@@ -13,6 +13,7 @@ export default class Nav extends Component {
         <div className={s.links}>
           <Link to="/app/messages">Messages</Link>
           <Link to="/app/settings">Settings</Link>
+          <Link to="/docs">Docs</Link>
         </div>
       </div>
     );
