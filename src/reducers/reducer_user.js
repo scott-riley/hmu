@@ -18,7 +18,7 @@ export default function(state = INITIAL_STATE.user, action) {
     case FETCH_USER:
       const userData = action.payload.data;
       if(userData.meta.error) {
-        return { status: "Oops, we couldn’t load your info, pls try and refresh" }
+        return { status: "Oops, we couldn’t load your info!" }
       }
       return userData.data[0];
     case EDIT_EMAIL:

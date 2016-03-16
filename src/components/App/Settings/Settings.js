@@ -12,6 +12,15 @@ class Settings extends Component {
 
   componentDidMount() {
     this.props.fetchKey();
+    if(!localStorage.getItem('token')) {
+      this.context.router.push('/app/login');
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.userKey.perform == "redirect") {
+      this.context.router.push('/app/login');
+    }
   }
 
   render() {
@@ -51,6 +60,10 @@ class Settings extends Component {
       </div>
     );
   }
+}
+
+Settings.contextTypes = {
+  router: React.PropTypes.object.isRequired,
 }
 
 function mapStateToProps(state) {
