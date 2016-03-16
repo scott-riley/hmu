@@ -15,7 +15,7 @@ export default class Hero extends Component {
             Hit me up, m8
           </h1>
           <p className={[s.copy].join(' ')}>
-            Everyone hates mailto: links. No one likes monolithic CRMs except marketing weirdos. HMU is a data-agnostic API. It lets you receive and manage your enquiries without creating your own endpoint. And it’s free, you lucky thing.
+            Everyone hates mailto: links. No one likes monolithic CRMs except marketing weirdos. HMU is a data-agnostic API. It lets you receive and manage your enquiries without coding and managing your own endpoint. And it’s free, you lucky thing.
           </p>
           <p className={s.linkContainer}>
             <Link to="/app/signup" className={s.link}>Get started for free</Link>
