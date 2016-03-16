@@ -16,6 +16,15 @@
   display: inline-block;
 }
 
+.logo a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.logo a:visited {
+  color: var(--color-secondary);
+}
+
 .emoji {
   display: inline-block;
   font-size: 1.4rem;

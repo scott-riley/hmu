@@ -8,7 +8,7 @@ export default class Nav extends Component {
     return (
       <div className={s.root}>
         <div className={s.logo}>
-          HMU.<span className={s.emoji}>🕶</span>
+        <Link to="/">HMU.<span className={s.emoji}>🕶</span></Link>
         </div>
         <div className={s.links}>
           <Link to="/app/messages">Messages</Link>

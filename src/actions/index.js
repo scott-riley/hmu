@@ -11,8 +11,9 @@ export const SIGN_UP_USER = 'SIGN_UP_USER';
 export const FETCH_USER = 'FETCH_USER';
 export const FETCH_KEY = 'FETCH_KEY';
 export const EDIT_EMAIL = 'EDIT_EMAIL';
+export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 
-const HMU_API = 'https://api.hmu.cool';
+const HMU_API = 'http://localhost:3000';
 
 export function logInUser(props) {
   const {email, password} = props;
@@ -111,5 +112,14 @@ export function editEmail(props) {
   return {
     type: EDIT_EMAIL,
     payload: request,
+  }
+}
+
+export function deleteMessage(id) {
+  const token = localStorage.getItem('token');
+  const request = axios.delete(`${HMU_API}/messages/single/${id}?access_token=${token}`);
+  return {
+    type: DELETE_MESSAGE,
+    payload: id,
   }
 }

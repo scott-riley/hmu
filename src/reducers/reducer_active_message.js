@@ -1,5 +1,5 @@
 import {INITIAL_STATE} from './index';
-import {SET_ACTIVE_MESSAGE, FETCH_ACTIVE_MESSAGE} from 'actions/index';
+import {SET_ACTIVE_MESSAGE, FETCH_ACTIVE_MESSAGE, DELETE_MESSAGE} from 'actions/index';
 
 export default function(state = INITIAL_STATE.activeMessage, action) {
   switch(action.type) {
@@ -14,6 +14,8 @@ export default function(state = INITIAL_STATE.activeMessage, action) {
       else {
         return state;
       }
+    case DELETE_MESSAGE:
+      return {};
     default:
       return state;
   }

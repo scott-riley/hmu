@@ -1,5 +1,5 @@
 import {INITIAL_STATE} from './index';
-import {FETCH_MESSAGES, MARK_MESSAGE_AS_READ} from 'actions/index';
+import {FETCH_MESSAGES, MARK_MESSAGE_AS_READ, DELETE_MESSAGE} from 'actions/index';
 
 export default function(state = INITIAL_STATE.messages, action) {
   switch(action.type) {
@@ -32,6 +32,10 @@ export default function(state = INITIAL_STATE.messages, action) {
         }
       });
       return newState;
+    case DELETE_MESSAGE:
+      const messageToDelete = action.payload
+      const deletedState = state.filter(m => { m.message && m.message._data.id !== action.payload });
+      return deletedState;
     default:
       return state;
   }

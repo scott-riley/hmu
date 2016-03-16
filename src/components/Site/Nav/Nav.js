@@ -12,7 +12,7 @@ export default class Nav extends Component {
       <nav className={s.root}>
         <Wrapper>
           <div className={s.logo}>
-            HMU.<span className={s.emoji}>🕶</span>
+            <Link to="/">HMU.<span className={s.emoji}>🕶</span></Link>
           </div>
           <Link to="/docs" className={s.link}>
             Docs

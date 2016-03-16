@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {deleteMessage} from 'actions/index';
+
 import moment from 'moment';
 
 import s from './MessageBlock.css';
 
-export default class MessageBlock extends Component {
+class MessageBlock extends Component {
 
   renderFields(message) {
     const fields = message.fields
@@ -55,6 +59,10 @@ export default class MessageBlock extends Component {
                   </div>
                 </div>
 
+                <div className={s.delete}>
+                  <span onClick={() => this.props.deleteMessage(message.id)}>Delete</span>
+                </div>
+
                 { message.fields && message.fields.subject ?
                     <div className={s.subject}>
                       {message.fields.subject}
@@ -83,3 +91,11 @@ export default class MessageBlock extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    deleteMessage: deleteMessage,
+  }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(MessageBlock);
