@@ -13,7 +13,7 @@ export const FETCH_KEY = 'FETCH_KEY';
 export const EDIT_EMAIL = 'EDIT_EMAIL';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 
-const HMU_API = 'http://localhost:3000';
+const HMU_API = 'https://api.hmu.cool';
 
 export function logInUser(props) {
   const {email, password} = props;
