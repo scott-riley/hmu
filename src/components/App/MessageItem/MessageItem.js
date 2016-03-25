@@ -42,6 +42,13 @@ export default class MessageItem extends Component {
           <div className={s.date}>
             {dateString}
           </div>
+          { message.fields && message.fields.budget ?
+              <div className={s.budget}>
+                {message.fields.budget}
+              </div>
+            :
+              null
+          }
         </div>
       </div>
     );
